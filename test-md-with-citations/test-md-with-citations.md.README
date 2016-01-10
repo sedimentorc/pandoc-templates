@@ -1,0 +1,22 @@
+# based on http://kieranhealy.org/blog/archives/2014/01/23/plain-text/
+
+1. download https://github.com/kjhealy/socbibs
+	
+	wget https://raw.githubusercontent.com/kjhealy/socbibs/master/socbib.bib
+
+2. wget https://github.com/kjhealy/pandoc-templates/blob/master/examples/Makefile
+	
+	wget https://raw.githubusercontent.com/kjhealy/pandoc-templates/master/examples/Makefile
+
+3. Set up pandoc-templates
+
+	mkdir /home/orc/.pandoc
+	git clone https://github.com/jgm/pandoc-templates.git ~/.pandoc
+
+4. Comment out minion font and \input{vc} from all templates in ~/.pandoc/templates
+	
+	%\usepackage[minion]{org-preamble-pdflatex}
+
+5. Edit Makefile
+	a. Change prefix to PREFIX=/home/orc/.pandoc
+	b. Change bib to BIB=/home/orc/Downloads/test-md-with-citations/socbib.bib
